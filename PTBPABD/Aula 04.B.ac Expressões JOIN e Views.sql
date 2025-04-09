@@ -12,6 +12,3 @@ SELECT * FROM ADVISOR;
 select * from course;
 select * from department d ;
 select * from teaches;
-
-
-jdbc:sqlserver://myfreesqldbserver-pt3031934.database.windows.net:1433;database=PTBPABD;user=ptbpabd@myfreesqldbserver-pt3031934;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
