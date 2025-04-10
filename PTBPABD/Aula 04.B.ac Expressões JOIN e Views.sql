@@ -1,7 +1,7 @@
 /*Exercicio 1*/
 select i.id, i.name, count(teaches.sec_id) as Number_Of_Sections
 from instructor i  
-full outer join teaches on i.id = teaches.id
+full outer join teaches on i.id = teaches.id/*left também funcionaria*/
 group by i.id, i.name;
 /*resolvi usar o alter join e usei um pouco do codigo da atividade anterior*/
 
