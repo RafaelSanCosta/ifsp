@@ -8,7 +8,7 @@ group by i.id, i.name;
 
 /*Exercicio 2*/
 select i.id, i.name,(
-select count(t.sec_id) from teaches t where t.id = i.id) as Number_Of_Sections
+select count(t.sec_id/* só o * funcionaria tbm*/) from teaches t where t.id = i.id) as Number_Of_Sections
 from instructor i;
 /*select dentro de select, bem mais simples do que eu imaginava*/
 
