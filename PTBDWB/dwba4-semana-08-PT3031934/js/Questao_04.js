@@ -59,7 +59,7 @@ for(var i=0; i<alunos.length;i++){
     " | Situação: " + alunos[i].situacao() + 
     "<br>";
 
-    mostrarAlunos(alunos[i]);
+    mostrarAlunos(alunos);
 }
 
 text += "</p>";
