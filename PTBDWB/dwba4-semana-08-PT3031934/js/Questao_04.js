@@ -45,6 +45,12 @@ function listaDeAlunos(value) {
 */
 //vi isso no w3schools e n funcionou
 
+function mostrarAlunos(vetor, i) {
+    alert("Nome Completo: " + vetor[i].nomeCompleto() + 
+    " | Media: " + vetor[i].media() + 
+    " | Situação: " + vetor[i].situacao());
+}
+
 let text = "<p>";
 
 for(var i=0; i<alunos.length;i++){
@@ -52,6 +58,8 @@ for(var i=0; i<alunos.length;i++){
     " | Media: " + alunos[i].media() + 
     " | Situação: " + alunos[i].situacao() + 
     "<br>";
+
+    mostrarAlunos(alunos, i);
 }
 
 text += "</p>";
