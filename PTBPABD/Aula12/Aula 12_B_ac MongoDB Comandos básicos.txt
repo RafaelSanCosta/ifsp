@@ -1,0 +1,43 @@
+show dbs -> lista todos os databases na instância do mongo conectadas
+use ifsp -> se conecta em um dos databases na instância
+db -> retorna qual banco está conectado
+var contato = {nome:"marcelo", obj:0} -> cria um objeto/variável
+nomevariavel.insertOne() -> insere a variável criada no banco de dados
+com o writeResult("{inserted":1}) -> exibe a quantidade de objetos inseridos
+show collections -> exibe as coleções dentro do banco de dados, no ifsp apenas
+contatos existe
+db.contatos.find() -> retorna os objetos existentes na coleção contatos
+o slide 14 cria duas variáveis, insere elas na coleção e exibe os objetos existentes na
+coleção
+db.contatos.findOne() -> retorna o primeiro objeto que atende os critérios da busca (caso
+tenha um)
+o slide 15 basicamente cria uma variável para servir de where/critérios do findOne, sendo
+usado o critério em contatos que tenham "id" no nome
+o side 16 basicamente cria uma variável com os critérios de objetos/documentos na coleção
+e possível inverter critérios como parâmetros
+db.contatos.find({"nome":1}) -> exibe apenas os nomes dos objetos - ids: 1 é; ids 1 sempre
+vem
+db.contatos.find({}, {"nome":1, _id: 0}) -> suprime os ids de aparecerem de forma forçada
+db.contatos.remove(criterio) -> remove um objeto da seleção seguindo certos critérios
+
+{
+no slide 26 é criado uma varável onde o valor armazenado é o de um objeto com nome "fabiano teixeira",
+confere se existe mesmo, acessa o elemento nome com "nomedavariavel".nome e altera seu valor
+e então faz db.contatos.update, passando como parametro qual objeto é pra ser modificado/atualizado e o novo valor,
+no caso a variável contato
+}
+
+no slide 27 é quase a mesma coisa, mas que usado o terceiro parametro "true" no comando, se não existir um objeto que atenda
+tal critério ao "where" é ativado o método upsert, então a variavel é adicionada, e não modifica nenhum outro objeto
+
+db.contatos.update({"nome":"angela teixeira"},{"$set":{"nome":"angela cristina"}}) -> já faz a modificação de um valor dentro 
+do método, colocando o critério a ser modificado, o valor a ser atualizado
+
+no slide 29 é criado um atributo emergencia para o objeto
+então é criado uma variavel contato contendo a melissa
+e uma variavel emergencia contendo a angela
+quando chamado contato.emergencia = emergencia, define que o valor do atributo emergencia da variavel contato (melissa) é emergencia (angela)
+quando exibido é mostrado o objeto da angela dentro do atributo emergencia
+no slide seguinte é feito o mesmo processo, só que ao inves de passar o objeto todo, é passado apenas o id de emergencia
+contato.emergencia = emergencia._id
+quando exibido aparece apenas o id do objeto como emergencia
