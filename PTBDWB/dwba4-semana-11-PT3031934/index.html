@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="css/conteudo.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>HOME - IFSP - Pirituba</title>
+</head>
+
+<body>
+    <header id="cabecalho">
+
+        <nav>
+            <object width="100%" height="200px" data="menu.html"></object>
+        </nav>
+
+    </header>
+
+    <main id="conteudo">
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/A.png" style="width:100%">
+                <div class="text">Caption One</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="images/B.jpg" style="width:100%">
+                <div class="text">Caption Two</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="images/C.jpg" style="width:100%">
+                <div class="text">Caption Three</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <div class="vid">
+                    <h1>Conheça os desafios da Inovação</h1>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5g5LQe3m8Po?si=G2NPC4UnIc09264O"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="text">Caption Four</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+
+        <div class="container">
+            <div class="sec1">
+
+                <img src="images/eleicoes.jpg" alt="Eleições IFSP" align="center">
+                <!--não achei o local da imagem, ou pelo menos, quando fiz o download o arquivo veio vazio-->
+
+                <h4 align="center">Radar IFSP: informe-se sobre as eleições do dia 13 de outubro</h4>
+                <p align="center">Todos os alunos e servidores podem votar, acesse aqui a cabine de votação online do
+                    seu câmpus</p>
+            </div>
+            <div class="sec2">
+
+                <img src="images/snct.jpg" alt="Eleições IFSP" align="center" width="45%" height="45%">
+                <h4 align="center">IFSP: SNCT reune atividades entre 19 e 24 de outubro</h4>
+                <p align="center">Programação reunirá iniciativas para aproximar pesquisadores e atividades culturais
+                </p>
+            </div>
+            <div class="sec3">
+
+                <img src="images/residencia.png" alt="Eleições IFSP" align="center">
+                <h4 align="center">IFSP oferece bolsa aos voluntarios da Residência Pedagógica</h4>
+                <p align="center">Bolsa de R$400,00 será paga pelo período de três meses</p>
+            </div>
+
+            <div class="sec4">
+
+                <img src="images/maratona.jpeg" alt="Eleições IFSP" align="center">
+                <h4 align="center">Inscrições abertas para a III Maratona InterIF</h4>
+                <p align="center">Maratona de programação do IFSP será realizada online, no dia 31 de outubro:
+                    inscrições até 26 de outubro</p>
+            </div>
+
+        </div>
+
+        <!-- <section>
+            <h1>
+                Conheça os desafios de inovação
+            </h1>
+            <div class="videoWrapper">
+                <p align="center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5g5LQe3m8Po" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </p>
+            </div>
+        </section> -->
+
+    </main>
+
+    <footer>
+        <br><br>
+        <object width="100%" height="200px" data="rodape.html"></object>
+
+    </footer>
+
+    <!-- Adicionar scripts abaixo apenas para publicação no Firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.8.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="javascript/script.js"></script>
+
+</body>
+
+</html>
