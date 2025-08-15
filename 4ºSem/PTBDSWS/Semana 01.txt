@@ -1,3 +1,6 @@
 https://rafaesancosta.pythonanywhere.com/
 https://rafaesancosta.pythonanywhere.com/user/Rafael%20Costa
 https://rafaesancosta.pythonanywhere.com/contextorequisicao
+https://rafaesancosta.pythonanywhere.com/codigostatusdiferente
+https://rafaesancosta.pythonanywhere.com/objetoresposta
+https://rafaesancosta.pythonanywhere.com/abortar
