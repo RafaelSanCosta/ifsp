@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} Flasky {% endblock %}
+{% block page_content %}
+<div class="page-header">
+    <h1>Olá, {% if nome and sobrenome %} {{ nome+ ' '+ sobrenome }} {% else %}Estranho{% endif %}!</h1>
+    <h3>A sua Insituição de ensino é {{instituicao}}</h3>
+    <h3>Está cursando a disciplina de {{disciplina}}</h3>
+    <br>
+    <h4>O IP do computador remoto é: {{remote_addr}}</h4>
+    <h4>O host da aplicação é: {{host}}</h4>
+</div>
+
+<div class="form-group required">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.nome.label(class_="control-label") }}
+        {{ form.nome(class_="form-control") }}
+        <br>
+        {{ form.sobrenome.label(class_="control-label") }}
+        {{ form.sobrenome(class_="form-control") }}
+        <br>
+        {{ form.instituicao.label(class_="control-label") }}
+        {{ form.instituicao(class_="form-control") }}
+        <br>
+        {{ form.disciplina.label(class_="control-label") }}
+        {{ form.disciplina(class_="form-control") }}
+        <br>
+        {{ form.submit(class_="btn btn-default") }}
+    </form>
+</div>
+<br>
+<p>The local date and time is {{ moment(current_time).format('LLL') }}</p>
+<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+{% endblock %}
