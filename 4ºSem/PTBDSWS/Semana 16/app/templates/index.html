@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<main>
+    {% if current_user.is_authenticated %}
+        <section class="page-header">
+            <h1>Hello, {{current_user.username}}!</h1>
+        </section>
+        <section>
+            <h2>Relação de usuários cadastrados:</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome do usuário</th>
+                        <th>Email</th>
+                        <th>Confirmado?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in user_list %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.confirmed }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    {% else %}
+        <section    class="page-header">
+            <h1>Hello, Stranger!</h1>
+        </section>
+    {% endif %}
+</main>
+{% endblock %}
