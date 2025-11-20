@@ -6,7 +6,6 @@ from datetime import datetime
 
 def send_async_email(app, payload):
     with app.app_context():
-        # Envio usando SendGrid
         response = requests.post(
             "https://api.sendgrid.com/v3/mail/send",
             headers={
