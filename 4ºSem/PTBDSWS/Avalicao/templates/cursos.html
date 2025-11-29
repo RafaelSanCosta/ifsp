@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h2>Não disponível</h2>
+    </div>
+
+<p>A data e hora local é {{ moment(session.last_access).format('LLL') }}.</p>
+{% endblock %}

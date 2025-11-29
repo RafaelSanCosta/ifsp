@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block page_content %}
+
+<div class="page-header">
+    <h1>Avaliação semestral</h1>
+    <h3>Aluno: Rafael Santos Costa</h3>
+    <h3>Prontuário: PT3031934</h3>
+</div>
+
+<p>A data e hora local é {{ moment(session.last_access).format('LLL') }}.</p>
+{% endblock %}
+
