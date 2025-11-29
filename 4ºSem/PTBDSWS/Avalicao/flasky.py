@@ -10,6 +10,8 @@ from flask_sqlalchemy import SQLAlchemy
 import sys
 import os
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['SQLALCHEMY_DATABASE_URI'] =\
@@ -19,7 +21,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+#migrate = Migrate(app, db)
 
 class Disciplina(db.Model):
     __tablename__ = 'disciplinas'
@@ -33,7 +35,7 @@ class Disciplina(db.Model):
 class DisciplinaForm(FlaskForm):
     nomeDisciplina = StringField('Cadastre a nova disciplina e o semestre associado:', validators=[DataRequired()])
     semestre = RadioField(
-        'Selecione o Semestre:', 
+        'Selecione o Semestre:',
         choices=[
             ('1° Semestre', '1° Semestre'),
             ('2° Semestre', '2° Semestre'),
@@ -60,32 +62,33 @@ def internal_server_error(e):
 
 @app.route('/')
 def index():
-    return render_template('index.html', current_time=datetime.utcnow())
+    session['last_access'] = datetime.utcnow()
+    return render_template('index.html')
 
 @app.route('/disciplinas', methods=['GET', 'POST'])
-def disciplinas():       
+def disciplinas():
     form = DisciplinaForm()
-  
+
     disciplinas_all = Disciplina.query.all()
-    
+
     if form.validate_on_submit():
         nome_novo = form.nomeDisciplina.data
         semestre_label = form.semestre.data
-        
+
         disciplina_existente = Disciplina.query.filter_by(nome=nome_novo).first()
-        
+
         if disciplina_existente is None:
             nova_disciplina = Disciplina(nome=nome_novo, semestre=semestre_label)
-            
+
             db.session.add(nova_disciplina)
             db.session.commit()
-            
+
             session['known'] = False
         else:
             session['known'] = True
-            
+
         return redirect(url_for('disciplinas'))
-    
+
     return render_template(
         'disciplinas.html',
         titulo='Cadastro de Disciplinas',
@@ -93,20 +96,23 @@ def disciplinas():
         disciplinas=disciplinas_all
     )
 
-@app.route('/alunos'):
+@app.route('/alunos')
 def alunos():
-  return render_template('alunos.html', current_time=datetime.utcnow())
+    session['last_access'] = datetime.utcnow()
+    return render_template('alunos.html')
 
-@app.route('/professores'):
+@app.route('/professores')
 def professores():
-  return render_template('professores.html', current_time=datetime.utcnow())
+    session['last_access'] = datetime.utcnow()
+    return render_template('professores.html')
 
-@app.route('/cursos'):
+@app.route('/cursos')
 def cursos():
-  return render_template('cursos.html', current_time=datetime.utcnow())
+    session['last_access'] = datetime.utcnow()
+    return render_template('cursos.html')
 
-@app.route('/ocorrencias'):
+@app.route('/ocorrencias')
 def ocorrencias():
-  return render_template('ocorrencias.html', current_time=datetime.utcnow())
-  
-  
+    session['last_access'] = datetime.utcnow()
+    return render_template('ocorrencias.html')
+
