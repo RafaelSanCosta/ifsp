@@ -1,9 +1,31 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-
-{% block title %}Avaliação Semestral{% endblock %}
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block page_content %}
 
+    <div>
+        {{ wtf.quick_form(form) }}
+    </div>
+
+    <hr>
+
+    <h2>Relação de disciplinas cadastradas</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Disciplina</th>
+                <th>Semestre</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for disciplina in disciplinas %}
+                <tr>
+                    <td>{{ disciplina.nome }}</td>
+                    <td>{{ disciplina.semestre }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 {% endblock %}
